@@ -32,8 +32,8 @@ class _RootPageState extends State<RootPage> {
         children: const [
           Home(),
           Trabalhos(),
-          Mapa(),
           Favoritos(),
+          Mapa(),
         ],
       ),
       bottomNavigationBar: CustomBottomBar(

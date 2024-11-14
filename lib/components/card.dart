@@ -312,3 +312,92 @@ class CustomTrabCard extends StatelessWidget {
 }
 
 
+
+
+class CustomFavCard extends StatelessWidget {
+  final String imageAsset;
+  final String localidade;
+  final String title;
+  final String nome;
+  final String tempSem;
+  final String aval;
+  final String fav;
+  final String tempH;
+
+  const CustomFavCard({
+    super.key,
+    required this.imageAsset,
+    required this.localidade,
+    required this.title,
+    required this.nome,
+    required this.tempSem,
+    required this.aval,
+    required this.fav,
+    required this.tempH,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      splashColor: AppColors.primaryColorHover,
+      onTap: () {
+      
+      },
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
+          border: Border.all(color: AppColors.cinza),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
+                image: DecorationImage(
+                  image: AssetImage(imageAsset), 
+                  fit: BoxFit.cover,
+                ),
+              ),
+              width: double.infinity,
+              height: 200,
+            ),
+            const SizedBox(height: 8),
+            Text(localidade, style: const TextStyle(color: AppColors.cinzaEsc, fontSize: 16)),
+            const SizedBox(height: 4),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(title, style: const TextStyle(color: AppColors.black, fontSize: 24)),
+                _buildInfoBox(
+                  icon: FontAwesomeIcons.heartCirclePlus, iconColor: AppColors.vermelho,
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+          ],
+        ),
+      ),
+    );
+  }
+
+
+  Widget _buildInfoBox({
+    required IconData icon,
+    required Color iconColor,
+  }) {
+    return Container(
+      decoration: const BoxDecoration(
+        color: AppColors.cinza,
+        borderRadius: BorderRadius.all(Radius.circular(50)),
+      ),
+      child: Row(
+        children: [
+          Icon(icon, size: 24, color: iconColor),
+          const SizedBox(width: 8),
+        ],
+      ),
+    );
+  }
+}
