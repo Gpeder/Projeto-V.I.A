@@ -4,12 +4,12 @@ import 'package:via_projeto/components/buttons.dart';
 import 'package:via_projeto/components/color.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar( {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+      padding:  const EdgeInsets.only(left: 16, right: 16, top: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
           Expanded(
             child: DecoratedBox(
               decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(50)),
+                borderRadius:  const BorderRadius.all(Radius.circular(50)),
                 border: Border.all(color: AppColors.primaryColor),
               ),
               child: const TextField(
@@ -51,7 +51,6 @@ class CustomProfileAppBar extends StatelessWidget {
       child:  Row(
         children: [
           IconButton(onPressed: () { Navigator.pop(context);}, icon: const Icon(Icons.arrow_back, size: 30,)),
-
           Expanded(
             child: DecoratedBox(
               decoration: BoxDecoration(

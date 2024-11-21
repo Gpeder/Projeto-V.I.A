@@ -6,17 +6,28 @@ class Mapa extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Scaffold(
-      body: Padding(
-      padding: const EdgeInsets.only(top: 16, left: 18, right: 18),
-        child: ListView(
-          children: const [
-            CustomAppBar(),
-            SizedBox(height: 20,),
-            Text('Mapa', style: TextStyle(color: Colors.black, fontSize: 24),),
-          ],
-        ),
-      )
+    return  Scaffold(
+      body: Column(
+        children: [
+          const Padding(
+          padding:  EdgeInsets.only(top: 16, left: 18, right: 18),
+            child: CustomAppBar(),
+          ),
+          Container(
+            height: 600,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/foto_1.jpg'),
+                fit: BoxFit.cover
+              )
+            ),
+            child: const Column(
+              children: [
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
